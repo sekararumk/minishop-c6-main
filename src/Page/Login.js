@@ -5,6 +5,7 @@ import axios from 'axios'
 import userSlice from '../store/user'
 import jwtDecode from 'jwt-decode'
 import { useForm } from 'react-hook-form'
+import { GoogleLogin } from 'react-google-login'
 
 const Login = () => {
 
@@ -44,6 +45,14 @@ const Login = () => {
         })
     }
 
+    const googleSuccessLogin = (res) => {
+        console.log(res)
+    }
+
+    const googleFailedLogin = (err) => {
+        console.log(err)
+    }
+
   return (
     <section>
             <div className="container py-8">
@@ -65,6 +74,13 @@ const Login = () => {
                         </div>
                         <p>Don't have an accout? <Link to="/register" className="text-blue-600">Register Now</Link></p>
                     </form>
+                    <GoogleLogin
+                        clientId="754764522199-1v2dq4sgn18oakavs3k8qnmeu4kbcgpt.apps.googleusercontent.com"
+                        buttonText="Login"
+                        onSuccess={googleSuccessLogin}
+                        onFailure={googleFailedLogin}
+                        cookiePolicy={'single_host_origin'}
+                    />
                 </div>
             </div>
         </section>

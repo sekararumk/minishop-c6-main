@@ -13,6 +13,7 @@
     "postcss": "^8.4.12",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-google-login": "^5.2.2",
     "react-hook-form": "^7.30.0",
     "react-redux": "^7.2.8",
     "react-router": "^6.3.0",
