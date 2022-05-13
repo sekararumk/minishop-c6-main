@@ -76,7 +76,11 @@ const Login = () => {
                     </form>
                     <GoogleLogin
                         clientId="754764522199-1v2dq4sgn18oakavs3k8qnmeu4kbcgpt.apps.googleusercontent.com"
-                        buttonText="Login"
+                        render= { props => {
+                            return (
+                                <button className='bg-red-500 text-white px-8 py-3' onClick={props.onClick} disabled={props.disabled}>Login with Google</button>
+                            )
+                        }}
                         onSuccess={googleSuccessLogin}
                         onFailure={googleFailedLogin}
                         cookiePolicy={'single_host_origin'}
